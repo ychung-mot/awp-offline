@@ -65,9 +65,6 @@
     <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Datalist.Core, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Datalist.Core.7.0.0\lib\net45\Datalist.Core.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -274,7 +271,6 @@
     <Content Include="assets\logo-banner.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\MvcDatalist\mvc-datalist.js" />
     <Content Include="service-worker-assets.js" />
     <Content Include="service-worker.js" />
     <Content Include="Views\Web.config" />
@@ -298,51 +294,13 @@
     <None Include="Properties\PublishProfiles\awp-offline - Web Deploy.pubxml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Account\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\awp-offline - Web Deploy1.pubxml" />
     <None Include="Web.AdvSol.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="Web.config">
       <TransformOnBuild>True</TransformOnBuild>
     </Content>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.DEV.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.PRD.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.TST.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.UAT.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.UATC1.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.UATC2.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.UATK2.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.RFT.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.RFTC1.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.RFTC2.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.RFTK2.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
