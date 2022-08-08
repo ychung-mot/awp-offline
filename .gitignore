@@ -235,4 +235,5 @@ _Pvt_Extensions
 # dependencies
 **/node_modules
 **/ServiceDependencies
+**/web.config
 

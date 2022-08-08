@@ -136,7 +136,6 @@
     <Compile Include="Utilities\Synchronization\WriterGuard.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".gitignore" />
     <None Include="app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
