@@ -1,0 +1,158 @@
+﻿/*
+    These styles are custom to the AWP project. They do not come from the keen or bootstrap frameworks.
+*/
+.section-header {
+  padding: 0.65rem 0; }
+
+.sticky-header {
+  background-color: white;
+  z-index: 91; }
+
+.awp-text-btn {
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue; }
+
+.awp-img-btn {
+  cursor: pointer; }
+
+.awp-card-header {
+  height: 3rem;
+  vertical-align: middle;
+  display: table-cell; }
+
+.sticky-header--stuck {
+  padding-top: 1.25rem; }
+
+::-ms-clear {
+  display: none; }
+
+#clear-search {
+  cursor: pointer; }
+
+#generalSearch {
+  padding-right: 2.5rem; }
+
+.y1Label,
+.y2Label,
+.y3Label,
+.y4Label,
+.y5Label {
+  font-weight: bold; }
+
+@media (max-width: 768px) {
+  .kt-datatable.kt-datatable--default
+> .kt-datatable__table
+> .kt-datatable__head
+.kt-datatable__row
+> .kt-datatable__cell.kt-datatable__toggle-detail,
+  .kt-datatable.kt-datatable--default
+> .kt-datatable__table
+> .kt-datatable__body
+.kt-datatable__row
+> .kt-datatable__cell.kt-datatable__toggle-detail {
+    padding-left: 0; } }
+
+/*
+    For anything less than 350px wide (i.e iPhone 5 (320px)) we're hiding non-essential action icons. Basically everything except the view icon.
+*/
+@media (max-width: 350px) {
+  .kt-datatable .kt-datatable__cell .datatable__hideable-action {
+    display: none; } }
+
+.toggle-read-edit-form.read-mode .read-view,
+.toggle-read-edit-form.edit-mode .edit-view {
+  display: block; }
+
+.toggle-read-edit-form.read-mode .edit-view,
+.toggle-read-edit-form.edit-mode .read-view {
+  display: none; }
+
+.flot-svg .flot-x-axis .flot-tick-label tspan {
+  font-weight: 600; }
+
+.flot-svg text.axisLabels {
+  font-weight: 600; }
+
+.bootstrap-select .dropdown-menu {
+  z-index: 102; }
+
+.bootstrap-select .dropdown-item.active.selected .text {
+  width: 100%;
+  line-height: 1.75rem; }
+
+.awp-font-size-1rem {
+  font-size: 1rem !important; }
+
+.image-holder {
+  text-align: center; }
+  .image-holder img {
+    width: 100%; }
+
+.dt-button-background {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.text-group__label.required:after,
+.label.required:after,
+label.required:after {
+  content: " (required)"; }
+
+.awp-link {
+  text-decoration: none;
+  position: relative;
+  display: inline-block; }
+  .awp-link:after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 1rem;
+    left: 0;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-bottom: solid 2px #2739c1; }
+  .awp-link:hover {
+    text-decoration: none !important; }
+    .awp-link:hover:after {
+      width: 100%; }
+
+.bootstrap-select .dropdown-menu {
+  max-width: 90%; }
+
+.pagination_showing {
+  padding: 0 8px; }
+
+.main-nav {
+  background-color: #036; }
+
+.main-nav.dev {
+  background-color: #448a38; }
+
+.main-nav.tst {
+  background-color: #f9a825; }
+
+.main-nav.uat {
+  background-color: #744e91; }
+
+.main-nav {
+  padding: 0; }
+
+@media (min-width: 992px) {
+  .main-nav {
+    padding: 0.5rem 1rem; } }
+
+header > .main-nav {
+  padding: 0.5rem 1rem; }
+
+/* Fixes an issue with the time portion of react-datepicker wrapping below calendar when using with a bootstrap theme. */
+.react-datepicker-popper {
+  width: max-content;
+  z-index: 9999 !important; }
+
+/* Hide disabled time options */
+.react-datepicker__time-list-item--disabled {
+  display: none; }
+
+#ol-container {
+  width: 100%;
+  height: 500px; }

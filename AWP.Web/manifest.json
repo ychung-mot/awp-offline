@@ -1,0 +1,22 @@
+{
+  "short_name": "SAWSx",
+  "name": "Snow Avalanche Weather System",
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/content/assets/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/content/assets/logo-banner.png",
+      "type": "image/png",
+      "sizes": "155x41"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+﻿<div class="card">
+    <div id="header_title" class="card-header">
+        <h2 style="height: 3rem; vertical-align:middle; display:table-cell;">
+            @ViewBag.Title
+        </h2>
+    </div>
+
+    <div class="card-body">
+        <br />
+        <h3>@ViewBag.Header</h3>
+        <span>If you would like to log back in, please select one of the following</span>
+        <div class="row">
+            <div class="col-sm-8">
+                @Html.ActionLink("IDIR", "SignIn", "Account", new { idpHint = "idir", redirectUrl = ViewBag.RedirectUrl }, new { @style = "color:#ffffff;text-decoration:none;", @class= "btn btn-primary w-25 my-2" })
+                @Html.ActionLink("Business BCeID", "SignIn", "Account", new { idpHint = "bceidbusiness", redirectUrl = ViewBag.RedirectUrl }, new { @style = "color:#ffffff;text-decoration:none;", @class = "btn btn-primary w-25 my-2" })
+            </div>
+        </div>
+        <br />
+        <p>
+            If you are experiencing any difficulties or have any questions, please contact<br />
+            IT support at this email: <a href="mailto:awpit@gov.bc.ca">awpit@gov.bc.ca</a>
+        </p>
+    </div>
+</div>
