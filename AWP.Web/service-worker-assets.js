@@ -5,10 +5,10 @@ self.assetsManifest = {
             "url": "/manifest.json"
         },
         {
-            "url": "/favicon.png"
+            "url": "/assets/favicon.png"
         },
         {
-            "url": "/logo-banner.png"
+            "url": "/assets/logo-banner.png"
         }
     ],
     "navigation": [
