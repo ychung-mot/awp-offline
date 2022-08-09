@@ -8,24 +8,25 @@ namespace AWP.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(
-                new Bundle("~/bundles/js/app-react")
+                new Bundle("~/bundles/js/app-react.js")
                     .Include("~/assets/js/runtime.js")
                     .Include("~/assets/js/react-core.js")
                     .Include("~/assets/js/appReact.js")
             );
 
             bundles.Add(
-                new Bundle("~/bundles/js/login-react")
+                new Bundle("~/bundles/js/login-react.js")
                     .Include("~/assets/js/runtime.js")
                     .Include("~/assets/js/react-core.js")
                     .Include("~/assets/js/loginReact.js")
             );
 
             bundles.Add(
-                new Bundle("~/bundles/css")
+                new Bundle("~/bundles/main.css")
+                    .Include("~/assets/css/bootstrap-theme.min.css")
+                    .Include("~/assets/css/bootstrap-icons.css")
                     .Include("~/assets/css/fontawesome.min.css")
                     .Include("~/assets/css/web-app/*.css")
-                    .Include("~/assets/css/awp.css")
             );
         }
     }

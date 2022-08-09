@@ -1,0 +1,123 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="$(SolutionDir)\AWP.Web\bin\Newtonsoft.Json.dll" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name="System.Web.dll" #>
+<#@ Assembly Name="System.Configuration.dll" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="System.Collections.Specialized" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Security.Cryptography" #>
+<#@ output extension=".js" #>
+<#
+    static string ComputeSha256Hash(string rawData)  
+    {  
+        using (SHA256 sha256Hash = SHA256.Create())  
+        {   
+            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));  
+  
+            var builder = new StringBuilder();  
+            for (int i = 0; i < bytes.Length; i++)  
+            {  
+                builder.Append(bytes[i].ToString("x2"));  
+            }  
+            return string.Format("sha256-{0}", builder);  
+        }
+    }  
+
+    string GetRoot(string path)
+    {
+        var trim = new[] {'\\'};
+        var temp = path.TrimEnd(trim);
+        return temp.Substring(temp.LastIndexOf('\\')).Trim(trim);
+    }
+
+    List<string> GetAssets(string path)
+    {
+        var results = new List<string>();
+        var assetDirectories = Directory.GetDirectories(path);
+        var rootFolder = GetRoot(path);
+
+        var trim = new[] { '\\' };
+
+        foreach (var directory in assetDirectories)
+        {
+            if(Path.GetFileName(directory) != "app" && Path.GetFileName(directory) != ".vscode")
+            {
+                var files = Directory.GetFiles(directory, "*", SearchOption.AllDirectories);
+                foreach (var file in files)
+                {
+                    if (Path.GetExtension(file) != ".txt")
+                    {
+                        var temp = file.Substring(file.LastIndexOf(rootFolder))?.Trim(trim)?.Replace(@"\", "/");
+                        var assetPath = $"/{temp}";
+
+                        results.Add(assetPath);
+                    }
+                }
+            }
+        }
+
+        return results;
+    }
+
+    List<dynamic> GeneratePrecache(List<string> assets, string version)
+    {
+        var results = new List<dynamic>();
+
+        results.Add(new { url = "/manifest.json"});
+
+        foreach (var item in assets)
+        {
+            results.Add(new { url = item });
+        }
+
+        return results;
+    }
+
+    List<dynamic> GenerateNavigationList()
+    {
+        var results = new List<dynamic>();
+
+        results.Add(new { url = "/" });
+        results.Add(new { url = "/api/v1/dropdowns/usertypes" });
+
+        return results;
+    }
+
+    string GetBuildVersion(string path)
+    {
+        var version = "1";
+        XmlDocument doc = new XmlDocument();
+        var configPath = string.Format(@"{0}\web.config", path);
+        doc.Load(configPath);
+
+        var node = doc.DocumentElement.SelectSingleNode("/configuration/appSettings/add[@key='webpages:Version']");
+
+        return string.Format("v{0}", "1.0");
+    }
+
+	string path = this.Host.TemplateFile;
+	string contentPath = string.Format("{0}\\assets", Path.GetDirectoryName(path));
+
+	var assets = GetAssets(contentPath); 
+    var version = GetBuildVersion(Path.GetDirectoryName(path));
+
+    var precache = GeneratePrecache(assets, version);
+    var navigationList = GenerateNavigationList();
+
+    var json =  JsonConvert.SerializeObject(precache, Newtonsoft.Json.Formatting.Indented);
+    var navigation = JsonConvert.SerializeObject(navigationList, Newtonsoft.Json.Formatting.Indented);
+#>
+
+self.assetsManifest = {
+  "assets": <#= json #>,
+  "navigation": <#= navigation #>,
+  "version": "<#= version #>"
+};

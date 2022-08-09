@@ -19,9 +19,24 @@ window.addEventListener('load', () => {
 	if (navigator.onLine) {
 		ReactDOM.render(
 			<>
-				<div>
-					<a href={idirLink}>IDIR</a>
-					<a href={bceidLink}>Business BCeID</a>
+				<div className="container my-5">
+					<div className="col d-flex justify-content-center">
+						<div className="card text-center" style={{ width: '30rem' }}>
+							<div id="header_title" className="card-header">
+								<h3 style={{ height: '3rem', verticalAlign: 'middle', display: 'table-cell' }}>Authenticate with:</h3>
+							</div>
+							<div className="card-body">
+								<div className="btn-group-vertical">
+									<a className="btn btn-primary my-2" href={idirLink}>
+										IDIR
+									</a>
+									<a className="btn btn-primary my-2" href={bceidLink}>
+										Business BCeID
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</>,
 			document.getElementById('login')

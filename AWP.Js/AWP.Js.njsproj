@@ -35,7 +35,6 @@
     <Content Include=".eslintrc" />
     <Content Include=".eslintrc.js" />
     <Content Include=".prettierrc" />
-    <Content Include="jest.config.json" />
     <Content Include="jsApp\App.js" />
     <Content Include="jsApp\components\awpCommon.js" />
     <Content Include="jsApp\components\Counter.js" />

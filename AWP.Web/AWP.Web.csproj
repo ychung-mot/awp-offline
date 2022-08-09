@@ -252,6 +252,8 @@
   <ItemGroup>
     <Content Include="assets\css\awp.css" />
     <Content Include="assets\css\awp.min.css" />
+    <Content Include="assets\css\bootstrap-icons.css" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\css\fontawesome.css" />
     <Content Include="assets\css\fontawesome.min.css" />
     <Content Include="assets\css\web-app\appReact.css" />
@@ -261,6 +263,12 @@
     <Content Include="assets\css\web-app\fontawesome.min.css" />
     <Content Include="assets\css\web-app\loginReact.css" />
     <Content Include="assets\favicon.png" />
+    <Content Include="assets\fonts\bc-sans\FONTLOG_README.txt" />
+    <Content Include="assets\fonts\bc-sans\LICENSE_OFL.txt" />
+    <Content Include="assets\fonts\fontawesome\fa-brands-400.svg" />
+    <Content Include="assets\fonts\fontawesome\fa-regular-400.svg" />
+    <Content Include="assets\fonts\fontawesome\fa-solid-900.svg" />
+    <Content Include="assets\fonts\line-awesome\line-awesome.svg" />
     <Content Include="assets\js\appReact.js" />
     <Content Include="assets\js\appReact.js.LICENSE.txt" />
     <Content Include="assets\js\loginReact.js" />
@@ -271,7 +279,15 @@
     <Content Include="assets\logo-banner.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="service-worker-assets.js" />
+    <Content Include="service-worker-assets.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>service-worker-assets.tt</DependentUpon>
+    </Content>
+    <Content Include="service-worker-assets.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>service-worker-assets.js</LastGenOutput>
+    </Content>
     <Content Include="service-worker.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -291,6 +307,32 @@
     <Content Include="assets\js\loginReact.js.map" />
     <Content Include="assets\css\web-app\awp.scss" />
     <Content Include="assets\css\web-app\loginReact.css.map" />
+    <Content Include="assets\fonts\bc-sans\BCSans-Bold.woff" />
+    <Content Include="assets\fonts\bc-sans\BCSans-Bold.woff2" />
+    <Content Include="assets\fonts\bc-sans\BCSans-BoldItalic.woff" />
+    <Content Include="assets\fonts\bc-sans\BCSans-BoldItalic.woff2" />
+    <Content Include="assets\fonts\bc-sans\BCSans-Italic.woff" />
+    <Content Include="assets\fonts\bc-sans\BCSans-Italic.woff2" />
+    <Content Include="assets\fonts\bc-sans\BCSans-Regular.woff" />
+    <Content Include="assets\fonts\bc-sans\BCSans-Regular.woff2" />
+    <Content Include="assets\fonts\bootstrap\bootstrap-icons.woff" />
+    <Content Include="assets\fonts\bootstrap\bootstrap-icons.woff2" />
+    <Content Include="assets\fonts\fontawesome\fa-brands-400.eot" />
+    <Content Include="assets\fonts\fontawesome\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\fontawesome\fa-brands-400.woff" />
+    <Content Include="assets\fonts\fontawesome\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\fontawesome\fa-regular-400.eot" />
+    <Content Include="assets\fonts\fontawesome\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\fontawesome\fa-regular-400.woff" />
+    <Content Include="assets\fonts\fontawesome\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\fontawesome\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fontawesome\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fontawesome\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fontawesome\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\line-awesome\line-awesome.eot" />
+    <Content Include="assets\fonts\line-awesome\line-awesome.ttf" />
+    <Content Include="assets\fonts\line-awesome\line-awesome.woff" />
+    <Content Include="assets\fonts\line-awesome\line-awesome.woff2" />
     <None Include="Properties\PublishProfiles\awp-offline - Web Deploy.pubxml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Account\_ViewStart.cshtml" />
@@ -329,6 +371,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

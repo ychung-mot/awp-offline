@@ -7,8 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link rel="stylesheet" type="text/css" href="~/bundles/css" />
-    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/bundles/main.css")
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 
 </head>
@@ -17,7 +16,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - AWP Offline App</p>
         </footer>
     </div>
 
