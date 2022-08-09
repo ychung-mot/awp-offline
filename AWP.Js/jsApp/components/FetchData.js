@@ -5,8 +5,6 @@ import { selectUserTypes } from '@awp/stores/dropdownsSlice';
 const FetchData = () => {
 	const userTypesDropdown = useSelector(selectUserTypes);
 
-	console.log(userTypesDropdown);
-
 	return (
 		<table className="table table-striped" aria-labelledby="tabelLabel">
 			<thead>
