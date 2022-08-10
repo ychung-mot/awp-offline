@@ -82,8 +82,6 @@ const onActivate = (event) => {
 const onFetch = async (event) => {
 	let cachedResponse = null;
 
-	console.log(event.request.method);
-
 	if (event.request.method === "GET") {
 
 		const cache = await caches.open(cacheName);
@@ -93,6 +91,7 @@ const onFetch = async (event) => {
 			fetch(event.request)
 				.then((res) => {
 					if (res.status === 200) {
+						console.log(event.request.url);
 						cache.put(event.request, res);
 						return res;
 					}
