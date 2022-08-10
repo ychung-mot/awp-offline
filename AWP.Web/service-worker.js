@@ -82,32 +82,25 @@ const onActivate = (event) => {
 const onFetch = async (event) => {
 	let cachedResponse = null;
 
-	console.log(event.request.method)
+	console.log(event.request.method);
+
 	if (event.request.method === "GET") {
+
 		const cache = await caches.open(cacheName);
 		cachedResponse = await cache.match(event.request);
 
-		if (!cachedResponse) {
-			let isIgnorable = ignoreRequests.some((pattern) => pattern.test(event.request.url));
-
-			if (!isIgnorable) {
-				try {
-					if (navigator.onLine) {
-						let result = fetch(event.request)
-							.then((res) => {
-								return res;
-							})
-							.catch((err) => {
-								console.log(err);
-								console.log("navigator: ", navigator);
-							});
-						return result;
-					} 
-				} catch (error) {
-					console.log(event.request);
-					console.log(error);
-				}
-			}
+		if (cachedResponse && navigator.onLine) {
+			fetch(event.request)
+				.then((res) => {
+					if (res.status === 200) {
+						cache.put(event.request, res);
+						return res;
+					}
+				})
+				.catch((err) => {
+					console.log(err);
+					console.log("navigator: ", navigator);
+				});
 		}
 
 		return cachedResponse || fetch(event.request);
