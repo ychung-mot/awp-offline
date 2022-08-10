@@ -1,5 +1,4 @@
 ﻿using AWP.Service.Models;
-using AWP.Web.Authorization;
 using AWP.Web.DTO;
 using System;
 using System.Collections.Generic;
@@ -23,9 +22,11 @@ namespace AWP.Web.API
         [HttpGet]
         public HttpResponseMessage GetUserTypes()
         {
+            var cachedTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + " UTC";
+
             var userTypes = new List<UserType>();
-            userTypes.Add(new UserType { Id = 1, Description = "IDIR" });
-            userTypes.Add(new UserType { Id = 2, Description = "Business BCeID" });
+            userTypes.Add(new UserType { Id = 1, Description = "IDIR", CachedTime = cachedTime });
+            userTypes.Add(new UserType { Id = 2, Description = "Business BCeID", CachedTime = cachedTime });
 
             return Request.CreateResponse(HttpStatusCode.OK, userTypes, "application/json");
         }
