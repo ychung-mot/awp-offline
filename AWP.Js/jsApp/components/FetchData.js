@@ -11,6 +11,7 @@ const FetchData = () => {
 				<tr>
 					<th>ID</th>
 					<th>Descrition</th>
+					<th>Cached Time</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,6 +19,7 @@ const FetchData = () => {
 					<tr key={usertype.Id}>
 						<td>{usertype.Id}</td>
 						<td>{usertype.Description}</td>
+						<td>{usertype.CachedTime}</td>
 					</tr>
 				))}
 			</tbody>
