@@ -337,9 +337,6 @@
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Account\_ViewStart.cshtml" />
     <None Include="Properties\PublishProfiles\awp-offline - Web Deploy1.pubxml" />
-    <None Include="Web.AdvSol.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <Content Include="Web.config">
       <TransformOnBuild>True</TransformOnBuild>
     </Content>
