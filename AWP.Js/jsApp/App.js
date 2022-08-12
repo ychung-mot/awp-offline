@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Home from '@components/Home';
 import FetchData from '@components/FetchData';
-import { Counter } from '@components/Counter';
+import GeoLocation from '@components/GeoLocation';
 
 import './custom.css';
 
@@ -17,10 +17,10 @@ const App = () => {
 							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link to="/counter">Counter</Link>
+							<Link to="/geolocation">Geo Location</Link>
 						</li>
 						<li>
-							<Link to="/fetch-data">Fetch Data</Link>
+							<Link to="/fetch-data">Identity Providers</Link>
 						</li>
 					</ul>
 
@@ -29,8 +29,8 @@ const App = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route path="/counter">
-							<Counter />
+						<Route path="/geolocation">
+							<GeoLocation />
 						</Route>
 						<Route path="/fetch-data">
 							<FetchData />

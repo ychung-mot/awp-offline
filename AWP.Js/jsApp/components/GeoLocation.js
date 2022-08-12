@@ -1,3 +1,5 @@
+import React from 'react';
+
 const getPosition = () => {
 	return new Promise((res, rej) => {
 		navigator.geolocation.getCurrentPosition(res, rej, {
@@ -8,7 +10,7 @@ const getPosition = () => {
 	});
 };
 
-class SimpleExample extends React.Component {
+class GeoLocation extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { locationData: { coords: { latitude: null, longitude: null, accuracy: 0, speed: 0 } } };
@@ -50,4 +52,4 @@ class SimpleExample extends React.Component {
 	}
 }
 
-ReactDOM.render(<SimpleExample />, document.getElementById('example'));
+export default GeoLocation;
