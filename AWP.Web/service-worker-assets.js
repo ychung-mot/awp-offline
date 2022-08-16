@@ -1,4 +1,22 @@
 ﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 self.assetsManifest = {
   "assets": [
   {
@@ -141,6 +159,48 @@ self.assetsManifest = {
   },
   {
     "url": "/assets/fonts/line-awesome/line-awesome.woff2"
+  },
+  {
+    "url": "/assets/js/427.js"
+  },
+  {
+    "url": "/assets/js/427.js.map"
+  },
+  {
+    "url": "/assets/js/506.js"
+  },
+  {
+    "url": "/assets/js/506.js.map"
+  },
+  {
+    "url": "/assets/js/576.js"
+  },
+  {
+    "url": "/assets/js/576.js.map"
+  },
+  {
+    "url": "/assets/js/67.js"
+  },
+  {
+    "url": "/assets/js/67.js.map"
+  },
+  {
+    "url": "/assets/js/714.js"
+  },
+  {
+    "url": "/assets/js/714.js.map"
+  },
+  {
+    "url": "/assets/js/95.js"
+  },
+  {
+    "url": "/assets/js/95.js.map"
+  },
+  {
+    "url": "/assets/js/993.js"
+  },
+  {
+    "url": "/assets/js/993.js.map"
   },
   {
     "url": "/assets/js/appReact.js"
