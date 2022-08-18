@@ -101,7 +101,8 @@ const onFetch = async (event) => {
 				});
 		}
 
-		if (!navigator.onLine && !cachedResponse && !event.request.url.includes('/api/')) {
+		//when offline, use client router
+		if (!navigator.onLine && !cachedResponse) {
 			const request = new Request("/", { cache: "no-cache" });
 			cachedResponse = await cache.match(request);
 		}
