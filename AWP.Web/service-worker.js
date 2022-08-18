@@ -101,8 +101,7 @@ const onFetch = async (event) => {
 				});
 		}
 
-		//redirect offline url to home
-		if (!navigator.onLine && event.request.url === "https://awp-offline.azurewebsites.net/fetch-data") {
+		if (!navigator.onLine && !cachedResponse && !event.request.url.includes('/api/')) {
 			const request = new Request("/", { cache: "no-cache" });
 			cachedResponse = await cache.match(request);
 		}
