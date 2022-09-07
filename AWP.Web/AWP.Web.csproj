@@ -239,6 +239,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="UserType.cs" />
     <Compile Include="Authorization\AwpApiAuthorize.cs" />
     <Compile Include="Authorization\AwpResourceAuthorize.cs" />
@@ -349,10 +350,8 @@
     <Content Include="assets\js\714.js.map" />
     <Content Include="assets\js\95.js.map" />
     <Content Include="assets\js\993.js.map" />
-    <None Include="Properties\PublishProfiles\awp-offline - Web Deploy.pubxml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Account\_ViewStart.cshtml" />
-    <None Include="Properties\PublishProfiles\awp-offline - Web Deploy1.pubxml" />
     <Content Include="Web.config">
       <TransformOnBuild>True</TransformOnBuild>
     </Content>
@@ -367,6 +366,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\awp-offline - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AWP.Common\AWP.Common.csproj">

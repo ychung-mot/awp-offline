@@ -21,6 +21,7 @@ const offlineAssetsInclude = [
 ];
 const offlineAssetsExclude = [/^service-worker\.js$/];
 const ignoreRequests = [/react_devtools_backend.js$/];
+const apiUrl = /\/api\//;
 
 const onInstall = async (event) => {
 	console.log(`Installing service worker version: ${self.assetsManifest.version}`);
@@ -100,11 +101,17 @@ const onFetch = async (event) => {
 					console.log("navigator: ", navigator);
 				});
 		}
-
-		//when offline, use client router
+		
 		if (!navigator.onLine && !cachedResponse) {
-			const request = new Request("/", { cache: "no-cache" });
-			cachedResponse = await cache.match(request);
+			if (event.request.url.match(apiUrl)) {
+				const data = [];
+				const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+				var init = { "status": 200, "statusText": "Ok!" };
+				return new Response(blob, init);
+			} else {
+				const request = new Request("/", { cache: "no-cache" });
+				cachedResponse = await cache.match(request);
+			}
 		}
 
 		return cachedResponse || fetch(event.request);

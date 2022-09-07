@@ -30,5 +30,16 @@ namespace AWP.Web.API
 
             return Request.CreateResponse(HttpStatusCode.OK, userTypes, "application/json");
         }
+
+        [Route("dropdowns/users")]
+        [HttpGet]
+        public HttpResponseMessage GetUsers()
+        {
+            var users = new List<User>();
+
+            users.Add(new User { Id = 1, Name = "YCHUNG" });
+
+            return Request.CreateResponse(HttpStatusCode.OK, users, "application/json");
+        }
     }
 }

@@ -1,0 +1,26 @@
+{
+  "extends": [ "eslint:recommended", "plugin:react-hooks/recommended", "plugin:react/recommended" ],
+    "plugins": ["compat"],
+    "rules": {
+      "compat/compat": "error",
+      "semi": [2, "always"]
+    },
+    "settings": {
+      "import/resolver": {
+        "alias": {
+          "map": [
+            ["@awp", "./jsApp"],
+            ["@stores", "./jsApp/stores"],
+            ["@components", "./jsApp/components"]
+          ]
+        }
+      }
+    },
+    "parser": "@babel/eslint-parser",
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "jquery": true
+    }
+}
